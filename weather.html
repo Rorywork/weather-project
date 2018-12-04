@@ -3,6 +3,11 @@
 
 <head>
     <title>Weather Application using AJAX and Open Weather Map API</title>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine-html.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/boot.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.css" />
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="weather.js"></script>
@@ -12,11 +17,23 @@
 <body>
     <div class="weather-container">
         <p id="cityName"></p>
-        <img id="icon">
+        <img id="weatherIcon">
         <p id="weather"></p>
         <p id="temp"></p>
+        <p id="pressure"></p>
+        <p id="humidity"></p>
+        <img id="clock-icon">
+        <p id="sunriseLoc"></p>
         <p id="sunrise"></p>
+        <p id="sunsetLoc"></p>
+        <p id="sunset"></p>
+        <img id="clock-icon">
         <p id="tempMax"></p>
+        <p id="tempMin"></p>
+        <p id="windSpeed"></p>
+        <p id="windDirection"></p>
+        <img id="windDirectionIcon">
+        <p id="clouds"></p>
     </div>
 
 </body>

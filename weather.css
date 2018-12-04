@@ -1,0 +1,19 @@
+body{
+    background-color: lightgrey;
+    font-family: sans-serif;
+    color: white;
+}
+
+.weather-container{
+    background: linear-gradient(#3d3d3d, #9198e5);
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+}
+
+
+#clock-icon{
+    content: url("images/clock-icon.png");
+    height:30px;
+    width:30px;
+}
