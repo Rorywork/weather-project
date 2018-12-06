@@ -156,5 +156,9 @@ function ConvertUserTime2LocalTime(time, city) {
         expect(result).toBe(8)
     })
 
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
     
 });

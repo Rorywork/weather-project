@@ -3,21 +3,26 @@
 body{
     font-family: sans-serif;
     color: white;
-    background: linear-gradient(#1D84B5, #0A2239);
+    background-image: url("https://ih1.redbubble.net/image.225089486.1480/flat,550x550,075,f.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .skeleton{
-    background-color: rgb(0,0,0,0.3);
+    background-color: rgb(0,0,0,0);
 }
 
 .title{
+    margin-left: 5%;
+    width: 90%;
     text-align: center;
     font-family: 'Alegreya Sans SC', sans-serif;
     font-weight: 80;
     font-size: 40px;
     margin-top: 10px;
-    color: black;
-    background: linear-gradient(#1D84B5, #0A2239); 
+    color: yellow;
+    background: linear-gradient(#1D84B5, #0A2239);
     height: 60px;
 }
 
