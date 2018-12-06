@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather Application using AJAX and Open Weather Map API</title>
+    
+ <!--   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine-html.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/boot.js"></script> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.css" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="weather.js"></script>
+    <link rel="stylesheet" href="weather.css" type="text/css" />
+    
+</head>
+
+<body>
+    
+
+<div class="skeleton">
+<h1 class="title">Weathercorp.</h1>
+
+<div class="tab-panels">
+            <ul class="tabs">
+                <li rel="panel1" class="active">Credits</li>
+                <li rel="panel2">Technologies</li>
+            </ul>
+
+            <div id="panel1" class="panel active">
+                content1<br/>
+                content1<br/>
+                content1<br/>
+                content1<br/>
+                content1<br/>
+            </div>
+            <div id="panel2" class="panel">
+                content2<br/>
+                content2<br/>
+                content2<br/>
+                content2<br/>
+                content2<br/>
+            </div>
+            <!--<div id="panel3" class="panel">-->
+            <!--    content3<br/>-->
+            <!--    content3<br/>-->
+            <!--    content3<br/>-->
+            <!--    content3<br/>-->
+            <!--    content3<br/>-->
+            <!--</div>-->
+            <!--<div id="panel4" class="panel">-->
+            <!--    content4<br/>-->
+            <!--    content4<br/>-->
+            <!--    content4<br/>-->
+            <!--    content4<br/>-->
+            <!--    content4<br/>-->
+            <!--</div>-->
+        </div>
+
+
+<div class="weather-container">
+        
+        
+<div class="row" id="container">
+  <div class="col-3">
+    <ul class="list-style">  
+        <li class="city-name" id="cityName"></li>
+        <img id="weatherIcon">
+    </ul>
+    </div>
+    
+  <div class="col-3">
+        <ul class="list-style">
+        <li id="weather"></li>
+        <li id="temp"></li>
+        <li id="pressure"></li>
+        <li id="humidity"></li>
+        <li id="clouds"></li>
+    </ul>
+  </div>
+  
+  <div class="col-3">
+          <ul class="list-style">
+
+        <li id="sunriseLoc"></li>
+        <li id="sunrise"></li>
+        <li id="sunsetLoc"></li>
+        <li id="sunset"></li>
+    </ul>
+  </div>
+  
+  
+  <div class="col-3">
+        <ul class="list-style">
+        <li id="tempMax"></li>
+        <li id="tempMin"></li>
+        <li id="windSpeed"></li>
+        <li id="windDirection"></li>
+        <li><img id="windDirectionIcon"></li>
+    </ul>
+  </div>
+</div>
+</div>
+
+
+<div class="weather-container">
+        
+        
+<div class="row" id="container">
+  <div class="col-3">
+    <ul class="list-style">  
+        <li class="city-name" id="cityName"></li>
+        <img id="weatherIcon">
+    </ul>
+    </div>
+    
+  <div class="col-3">
+        <ul class="list-style">
+        <li id="weather"></li>
+        <li id="temp"></li>
+        <li id="pressure"></li>
+        <li id="humidity"></li>
+        <li id="clouds"></li>
+    </ul>
+  </div>
+  
+  <div class="col-3">
+          <ul class="list-style">
+
+        <li id="sunriseLoc"></li>
+        <li id="sunrise"></li>
+        <li id="sunsetLoc"></li>
+        <li id="sunset"></li>
+    </ul>
+  </div>
+  
+  
+  <div class="col-3">
+        <ul class="list-style">
+        <li id="tempMax"></li>
+        <li id="tempMin"></li>
+        <li id="windSpeed"></li>
+        <li id="windDirection"></li>
+        <li><img id="windDirectionIcon"></li>
+    </ul>
+  </div>
+</div>
+
+    
+
+
+</div>
+
+<div class="weather-container">
+        
+        
+<div class="row" id="container">
+  <div class="col-3">
+    <ul class="list-style">  
+        <li class="city-name" id="cityName"></li>
+        <img id="weatherIcon">
+    </ul>
+    </div>
+    
+  <div class="col-3">
+        <ul class="list-style">
+        <li id="weather"></li>
+        <li id="temp"></li>
+        <li id="pressure"></li>
+        <li id="humidity"></li>
+        <li id="clouds"></li>
+    </ul>
+  </div>
+  
+  <div class="col-3">
+          <ul class="list-style">
+
+        <li id="sunriseLoc"></li>
+        <li id="sunrise"></li>
+        <li id="sunsetLoc"></li>
+        <li id="sunset"></li>
+    </ul>
+  </div>
+  
+  
+  <div class="col-3">
+        <ul class="list-style">
+        <li id="tempMax"></li>
+        <li id="tempMin"></li>
+        <li id="windSpeed"></li>
+        <li id="windDirection"></li>
+        <li><img id="windDirectionIcon"></li>
+    </ul>
+  </div>
+</div>
+
+    
+
+
+</div>
+
+<div class="weather-container">
+        
+        
+<div class="row" id="container">
+  <div class="col-3">
+    <ul class="list-style">  
+        <li class="city-name" id="cityName"></li>
+        <img id="weatherIcon">
+    </ul>
+    </div>
+    
+  <div class="col-3">
+        <ul class="list-style">
+        <li id="weather"></li>
+        <li id="temp"></li>
+        <li id="pressure"></li>
+        <li id="humidity"></li>
+        <li id="clouds"></li>
+    </ul>
+  </div>
+  
+  <div class="col-3">
+          <ul class="list-style">
+
+        <li id="sunriseLoc"></li>
+        <li id="sunrise"></li>
+        <li id="sunsetLoc"></li>
+        <li id="sunset"></li>
+    </ul>
+  </div>
+  
+  
+  <div class="col-3">
+        <ul class="list-style">
+        <li id="tempMax"></li>
+        <li id="tempMin"></li>
+        <li id="windSpeed"></li>
+        <li id="windDirection"></li>
+        <li><img id="windDirectionIcon"></li>
+    </ul>
+  </div>
+</div>
+
+
+
+    
+
+
+</div>
+
+<div class="weather-container">
+        
+        
+<div class="row" id="container">
+  <div class="col-3">
+    <ul class="list-style">  
+        <li class="city-name" id="cityName"></li>
+        <img id="weatherIcon">
+    </ul>
+    </div>
+    
+  <div class="col-3">
+        <ul class="list-style">
+        <li id="weather"></li>
+        <li id="temp"></li>
+        <li id="pressure"></li>
+        <li id="humidity"></li>
+        <li id="clouds"></li>
+    </ul>
+  </div>
+  
+  <div class="col-3">
+          <ul class="list-style">
+
+        <li id="sunriseLoc"></li>
+        <li id="sunrise"></li>
+        <li id="sunsetLoc"></li>
+        <li id="sunset"></li>
+    </ul>
+  </div>
+  
+  
+  <div class="col-3">
+        <ul class="list-style">
+        <li id="tempMax"></li>
+        <li id="tempMin"></li>
+        <li id="windSpeed"></li>
+        <li id="windDirection"></li>
+        <li><img id="windDirectionIcon"></li>
+    </ul>
+  </div>
+</div>
+
+
+
+    
+
+
+</div>
+<div class="weather-container">
+        
+        
+<div class="row" id="container">
+  <div class="col-3">
+    <ul class="list-style">  
+        <li class="city-name" id="cityName"></li>
+        <img id="weatherIcon">
+    </ul>
+    </div>
+    
+  <div class="col-3">
+        <ul class="list-style">
+        <li id="weather"></li>
+        <li id="temp"></li>
+        <li id="pressure"></li>
+        <li id="humidity"></li>
+        <li id="clouds"></li>
+    </ul>
+  </div>
+  
+  <div class="col-3">
+          <ul class="list-style">
+
+        <li id="sunriseLoc"></li>
+        <li id="sunrise"></li>
+        <li id="sunsetLoc"></li>
+        <li id="sunset"></li>
+    </ul>
+  </div>
+  
+  
+  <div class="col-3">
+        <ul class="list-style">
+        <li id="tempMax"></li>
+        <li id="tempMin"></li>
+        <li id="windSpeed"></li>
+        <li id="windDirection"></li>
+        <li><img id="windDirectionIcon"></li>
+    </ul>
+  </div>
+</div>
+
+
+
+    
+
+
+</div>
+</div>
+</body>
+
+</html>

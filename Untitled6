@@ -1,0 +1,44 @@
+<div class="weather-container">
+        
+        
+<div class="row" id="container">
+  <div class="col-3">
+    <ul class="list-style">  
+        <li class="city-name" id="cityName"></li>
+        <img id="weatherIcon">
+    </ul>
+    </div>
+    
+    -----------------------------------------------
+    
+  <div class="col-3">
+        <ul class="list-style">
+        <li id="weather"></li>
+        <li id="temp"></li>
+        <li id="pressure"></li>
+        <li id="humidity"></li>
+        <li id="clouds"></li>
+    </ul>
+  </div>
+  
+      -----------------------------------------------
+      
+     <div class="col-3">
+          <ul class="list-style">
+
+        <li id="sunriseLoc"></li>
+        <li id="sunrise"></li>
+        <li id="sunsetLoc"></li>
+        <li id="sunset"></li>
+    </ul>
+  </div> 
+  
+<div class="col-3">
+<ul class="list-style">
+<li id="tempMax"></li>
+<li id="tempMin"></li>
+<li id="windSpeed"></li>
+<li id="windDirection"></li>
+<li><img id="windDirectionIcon"></li>
+</ul>
+</div>

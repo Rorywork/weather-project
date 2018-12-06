@@ -1,6 +1,6 @@
 // JavaScript File
 
-const cityIndex = [4]
+const cityIndex = [2]
 
 
 $.getJSON("https://api.openweathermap.org/data/2.5/group?id=524894,1784658,658226,2643743,2800866&units=Metric&APPID=1e95685190869b57537a9047d4b3c76d", function(data) {
@@ -27,7 +27,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/group?id=524894,1784658,65822
     var degrees = windDirection;
 
 
-    $("#cityName").append("City: " + cityName);
+    $("#cityName").append(cityName);
     $("#weatherIcon").attr("src", weatherIcon);
     $("#weather").append("Weather today: " + weather);
     $("#temp").append("Temperature: " + temp + " Deg. Celsius");
@@ -54,6 +54,36 @@ $.getJSON("https://api.openweathermap.org/data/2.5/group?id=524894,1784658,65822
     });
         
     $("#clouds").append("Cloud cover: " + clouds + "%");
+
+//--------------------------------------------------------------
+
+ $('.tab-panels .tabs li').on('click', function() {
+
+        var $panel = $(this).closest('.tab-panels');
+
+        $panel.find('.tabs li.active').removeClass('active');
+        $(this).addClass('active');
+
+        //figure out which panel to show
+        var panelToShow = $(this).attr('rel');
+
+        //hide current panel
+        $panel.find('.panel.active').slideUp(300, showNextPanel);
+
+        //show next panel
+        function showNextPanel() {
+            $(this).removeClass('active');
+
+            $('#'+panelToShow).slideDown(300, function() {
+                $(this).addClass('active');
+            });
+        }
+    });
+
+//--------------------------------------------------------------
+
+
+
 
 
 })
@@ -104,7 +134,7 @@ function ConvertUserTime2LocalTime(time, city) {
 }
 
 
-describe("Conversion Functions", () => {
+ describe("Conversion Functions", () => {
     it ("Converts from Kelvin to Celcius", () => {
         
         // arrange
@@ -141,6 +171,11 @@ describe("Conversion Functions", () => {
         expect(result).toBe(8)
     })
 
-
     
 });
+
+
+
+
+   
+

@@ -1,19 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,300i,400,400i,500,800,800i');
+
 body{
-    background-color: lightgrey;
     font-family: sans-serif;
     color: white;
+    background: linear-gradient(#1D84B5, #0A2239);
+}
+
+.skeleton{
+    background-color: rgb(0,0,0,0.3);
+}
+
+.title{
+    text-align: center;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: 80;
+    font-size: 40px;
+    margin-top: 10px;
+    color: black;
+    background: linear-gradient(#1D84B5, #0A2239); 
+    height: 60px;
 }
 
 .weather-container{
-    background: linear-gradient(#3d3d3d, #9198e5);
-    font-weight: bolder;
-    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+    background: linear-gradient(#0A2239, #1D84B5);
+    background-size: cover;
     color: white;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: 100;
+    text-align: center;
+    border: 1px solid #3d3d3d;
+    padding-top: 10px;
 }
 
+/*#container{*/
+/*    padding-top: 50px;*/
+/*}*/
 
 #clock-icon{
     content: url("images/clock-icon.png");
     height:30px;
     width:30px;
+}
+
+.london{
+    background-color: lightblue;
+    color: black
+}
+
+.berlin{
+    background-color: red;
+}
+
+.list-style{
+    display: inline-block;
+    list-style: none;
+}
+
+#weatherIcon{
+    height: 80px;
+}
+
+#windDirectionIcon{
+    margin-top: 30px;
+}
+
+.city-name{
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    font-size: 40px;
+    color: #00B3DB;
+}
+
+.tab-panels ul {
+    margin: 0;
+    padding: 0;
+}
+.tab-panels ul li {
+    list-style-type: none;
+    display: inline-block;
+    background: #999;
+    margin: 0;
+    padding: 3px 10px;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    font-weight: 200;
+    cursor: pointer;
+
+}
+.tab-panels ul li:hover {
+    color: #fff;
+    background: #666;
+}
+
+.tab-panels ul li.active {
+    color: #fff;
+    background: #666;
+}
+
+.tab-panels .panel {
+    display:none;
+    background: #c9c9c9;
+    padding: 30px;
+    border-radius: 0 0 10px 10px;
+}
+
+.tab-panels .panel.active {
+    display:block;
 }
