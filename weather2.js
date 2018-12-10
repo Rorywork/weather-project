@@ -23,7 +23,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/group?id=2643743,2950159,3117
         var tempMax = ConvertKelvin2Celsius(data.list[cityIndex].main.temp_max);
         var tempMin = ConvertKelvin2Celsius(data.list[cityIndex].main.temp_min);
         var windSpeed = ConvertMpsToMph(data.list[cityIndex].wind.speed);
-        var windDirection = data.list[cityIndex].wind.deg;
+        var windDirection = ConvertDegreesToDirection(data.list[cityIndex].wind.deg);
         var clouds = data.list[cityIndex].clouds.all;
         var windDirectionIcon = "images/windDirectionWhite.png";
     
@@ -50,7 +50,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/group?id=2643743,2950159,3117
         var html4sunCol = html_col_hdr + html_sun + html_close_div
     
         // HTML temp range and wind direction code
-        var html_temprange_wind ="<ul class='list-style'><li class='tempMax'>Max. temperature: " + tempMax + " Deg. Celsius</li><li class='tempMin'>Min. temperature: " + tempMin + " Deg. Celsius</li><li class='windSpeed'>Wind Speed: " + windSpeed + " mph</li><li class='windDirection'>Wind direction: " + windDirection + " Deg.</li><li><img src='" + windDirectionIcon + "' class='windDirectionIcon" + cityIndex + "'></li></ul>"
+        var html_temprange_wind ="<ul class='list-style'><li class='tempMax'>Max. temperature: " + tempMax + " Deg. Celsius</li><li class='tempMin'>Min. temperature: " + tempMin + " Deg. Celsius</li><li class='windSpeed'>Wind Speed: " + windSpeed + " mph</li><li class='windDirection'>Wind direction: " + windDirection + " </li><li><img src='" + windDirectionIcon + "' class='windDirectionIcon" + cityIndex + "'></li></ul>"
         var html4rangewindCol = html_col_hdr + html_temprange_wind + html_close_div   
     
         // Append the data and HTML tags to the DOM
@@ -84,6 +84,41 @@ function ConvertKelvin2Celsius(k) {
 
     return Math.floor(k - 273);
 
+}
+
+function ConvertDegreesToDirection(a){
+    
+    if (a >= 20 && a < 65){
+        return "North East"
+    }
+    if (a >= 65 && a < 110){
+        return "East"
+    }
+    if (a >= 110 && a < 155){
+        return " South East"
+    }
+    if (a >= 155 && a < 200){
+        return "South"
+    }
+    if (a >= 200 && a < 245){
+        return "South West"
+    }
+    if (a >= 245 && a < 290){
+        return "West"
+    }
+    if (a >= 290 && a < 335){
+        return "North West"
+    }
+    if (a >= 335){
+        return "North"
+    }
+    if (a <20){
+        return "North"
+    }
+    if(a=0){
+        return "North"
+    }
+    
 }
 
 
@@ -156,8 +191,20 @@ function ConvertUserTime2LocalTime(time, city) {
         expect(result).toBe(8)
     })
 
+    it("Converts from degrees to direction", () =>{
+        
+        //arrange
+        const num1 = 20
+        
+        //act
+        const result = ConvertDegreesToDirection(num1)
+        
+        //assert
+        expect(result).toBe("North East")
+    });
 
 $('#myModal').on('shown.bs.modal', function () {
+    console.log("clicked");
   $('#myInput').trigger('focus')
 })
     

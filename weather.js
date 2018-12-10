@@ -79,6 +79,23 @@ $.getJSON("https://api.openweathermap.org/data/2.5/group?id=524894,1784658,65822
             });
         }
     });
+    
+    
+//     $(document).ready(function(){
+//     $("button").click(function(){
+//         console.log("clicked");
+//         $(".row").fadeToggle();
+//         // $("#div2").fadeToggle("slow");
+//         // $("#div3").fadeToggle(3000);
+//     });
+
+// });
+
+
+$("button").click(function(){
+    $(".row").fadeTo("slow", 0.15);
+    
+});
 
 //--------------------------------------------------------------
 
