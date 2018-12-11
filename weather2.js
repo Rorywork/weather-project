@@ -24,10 +24,11 @@ $.getJSON("https://api.openweathermap.org/data/2.5/group?id=2643743,2950159,3117
         var tempMin = ConvertKelvin2Celsius(data.list[cityIndex].main.temp_min);
         var windSpeed = ConvertMpsToMph(data.list[cityIndex].wind.speed);
         var windDirection = ConvertDegreesToDirection(data.list[cityIndex].wind.deg);
+        var windDirection2 = data.list[cityIndex].wind.deg;
         var clouds = data.list[cityIndex].clouds.all;
         var windDirectionIcon = "images/windDirectionWhite.png";
     
-        var degrees = windDirection;
+        var degrees = windDirection2;
         // console.log(degrees);
 
 
